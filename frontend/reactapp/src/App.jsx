@@ -96,6 +96,11 @@ function App() {
     }
   }
 
+  const resetChamp = () => {
+    setSuccess('');
+    setError('');
+  }
+
   return (
     <div className="App">
       <div className="container">
@@ -109,13 +114,13 @@ function App() {
         </h2>
         <div className="wallet__flex">
           <div className="walletG">
-            <h3>Envoyer de l'Ether</h3>
-            <input type="text" placeholder="Ethers" value={amountSend} onChange={(e) => setAmountSend(e.target.value)} />
+            <h3>{"Envoyer de l'Ether"}</h3>
+            <input type="text" placeholder="Ethers" value={amountSend} onChange={(e) => setAmountSend(e.target.value)} onClick={resetChamp} />
             <button onClick={transfer}>Envoyer</button>
           </div>
           <div className="walletD">
-            <h3>Retirer de l'Ether</h3>
-            <input type="text" placeholder="Ethers" value={amountWithdraw} onChange={(e) => setAmountWithdraw(e.target.value)} />
+            <h3>{"Retirer de l'Ether"}</h3>
+            <input type="text" placeholder="Ethers" value={amountWithdraw} onChange={(e) => setAmountWithdraw(e.target.value)} onClick={resetChamp} />
             <button onClick={withdraw}>Retirer</button>
           </div>
         </div>
